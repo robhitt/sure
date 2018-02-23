@@ -457,6 +457,7 @@ footer {
 .footer-links {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .footer-link-item {
@@ -478,10 +479,12 @@ footer {
 
 .footer-social div {
   margin: 0 20px 0 0;
+  
 }
 
 .footer-social div img {
   vertical-align: middle;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1200px) {
