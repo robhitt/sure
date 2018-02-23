@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+    <defs>
+        <circle id="a" cx="50" cy="50" r="50"/>
+        <circle id="b" cx="22" cy="22" r="22"/>
+        <circle id="c" cx="22" cy="22" r="19.763"/>
+        <filter id="d" width="105.1%" height="105.1%" x="-2.5%" y="-2.5%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.109205163 0"/>
+        </filter>
+        <circle id="e" cx="22" cy="22" r="22"/>
+        <circle id="f" cx="22" cy="22" r="19.763"/>
+        <filter id="g" width="105.1%" height="105.1%" x="-2.5%" y="-2.5%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.109205163 0"/>
+        </filter>
+        <filter id="h" width="140.9%" height="145%" x="-20.5%" y="-17.5%" filterUnits="objectBoundingBox">
+            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.149569746 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" opacity=".779">
+        <g>
+            <use fill="#F2F4F7" xlink:href="#a"/>
+            <circle cx="50" cy="50" r="49.5" stroke="#DADFE9"/>
+        </g>
+        <g transform="translate(28 36)">
+            <use fill="#FFF" xlink:href="#b"/>
+            <circle cx="22" cy="22" r="21.5" stroke="#039BE5"/>
+        </g>
+        <g transform="translate(28 36)">
+            <use fill="#FFF" xlink:href="#c"/>
+            <use fill="#000" filter="url(#d)" xlink:href="#c"/>
+            <circle cx="22" cy="22" r="19.263" stroke="#039BE5"/>
+        </g>
+        <g transform="translate(28 36)">
+            <use fill="#FFF" xlink:href="#e"/>
+            <circle cx="22" cy="22" r="21.5" stroke="#039BE5"/>
+        </g>
+        <g transform="translate(28 36)">
+            <use fill="#F2F4F7" xlink:href="#f"/>
+            <use fill="#000" filter="url(#g)" xlink:href="#f"/>
+            <circle cx="22" cy="22" r="19.263" stroke="#039BE5"/>
+        </g>
+        <g stroke="#039BE5" filter="url(#h)" transform="translate(40 21)">
+            <path fill="#FFF" d="M3.62 0h14.988l3.002 6.48-10.608 13.348L.519 6.48z"/>
+            <path fill="#DADFE9" d="M7.333 6.154L4.4 0h5.867zM14.667 6.154L11.733 0h6.029zM11 18.462L7.333 6.154h7.334z"/>
+            <path stroke-linecap="square" d="M.733 6.154h20.578"/>
+        </g>
+    </g>
+</svg>

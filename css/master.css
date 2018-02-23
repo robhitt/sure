@@ -1,0 +1,712 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  background: url("../assets/images/blue-bg.svg") no-repeat;
+}
+
+header {
+  width: 100%;
+  text-transform: uppercase;
+  padding: 15px 0;
+  height: 69px;
+}
+
+.header-container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 150px;
+}
+
+header img {
+  float: left;
+  width: 150px;
+  height: 39px;
+  object-fit: contain;
+}
+
+.logo-white {
+  padding-right: 19px;
+}
+
+.logo-blue {
+  display: none;
+}
+
+.left-nav {
+  float: left;
+  margin-top: 7px;
+}
+
+.right-nav {
+  float: right;
+  margin-top: 7px;
+}
+
+.float-right {
+  float: left;
+}
+
+.float-left {
+  float: right;
+}
+
+header ul {
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline-block;
+  margin-right: 19px;
+  vertical-align: -webkit-baseline-middle;
+  vertical-align: middle;
+  font-size: 16px;
+  height: 39px;
+}
+
+header ul li a {
+  color: #fff;
+  text-transform: capitalize;
+  font-family: lato;
+  text-decoration: none;
+  display: block;
+  padding: 3px;
+}
+
+li .products {
+  position: relative;
+}
+
+.arrow-drop-down {
+  width: 16px;
+  height: 16px;
+  font-family: "Material Icons";
+  font-size: 16px;
+  color: #fff;
+  top: 6px;
+  right: -15px;
+  position: absolute;
+}
+
+.sign-up {
+  width: 120px;
+  height: 39px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  font-family: Lato;
+  font-size: 16px;
+  top: -10px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s;
+  transition-timing-function: linear;
+}
+
+.sign-up:hover {
+  background-color: #fff;
+  color: rgb(83, 167, 213);
+}
+
+.hamburger {
+  display: none;
+}
+
+/**************** MAIN CONTENT ****************/
+
+main {
+  max-width: 1440px;
+  margin: 0 auto 100px;
+  padding: 0 150px;
+}
+
+.sure-you {
+  font-size: 50px;
+  font-family: "Montserrat";
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+  margin: 54px 0 16px;
+}
+
+.main-description {
+  max-width: 1140px;
+  font-family: Lato;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.42;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.cta-container {
+  text-align: center;
+}
+
+.cta-button {
+  width: 241px;
+  height: 54px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff7043;
+  font-family: Lato;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+  margin: 0 auto 43px;
+  cursor: pointer;
+  -webkit-box-shadow: 3px 5px 7px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 5px 7px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 5px 7px -5px rgba(0, 0, 0, 0.75);
+  transition: 0.2s;
+  outline: none;
+}
+
+.cta-button:active,
+.cta-button:focus,
+.cta-button:hover {
+  background-color: #fb6131;
+}
+
+.cta-button:active {
+  transform: translate(1px, 1px);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.computer-container {
+  max-width: 811px;
+  margin: 0 auto;
+}
+
+.computer {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/**************** Insurance Partners ****************/
+.insurance-container {
+  height: 160px;
+  background-color: #f6f9fc;
+  margin-bottom: 105px;
+}
+
+.insurance-inner {
+  max-width: 1440px;
+  padding: 0 150px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+}
+
+.insurance-inner img {
+  height: auto;
+}
+
+.chubb,
+.nationwide,
+.qbe,
+.assurant {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.chubb-outer {
+  max-width: 247px;
+  margin: 0 10px;
+}
+
+.nationwide-outer {
+  max-width: 212px;
+  margin: 0 10px;
+}
+
+.qbe-outer {
+  max-width: 129px;
+  margin: 0 10px;
+}
+
+.assurant-outer {
+  max-width: 281px;
+  margin: 0 10px;
+}
+
+/**************** 2 Columns ****************/
+.white-columns-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 150px;
+  font-size: 0;
+  text-align: center;
+}
+
+.white-column {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.white-column-blue-font {
+  max-width: 465px;
+  font-family: Montserrat;
+  font-size: 62px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1px;
+  text-align: left;
+  color: #039be5;
+  margin: 0 auto;
+}
+
+.white-column-list-container {
+  font-size: 15px;
+  max-width: 315px;
+  margin: 0 auto 64px;
+}
+
+.box-title {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  text-align: left;
+  color: #6b7c93;
+  margin-bottom: 10px;
+}
+
+.box-description {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2;
+  letter-spacing: 0.7px;
+  text-align: left;
+  color: #6b7c93;
+}
+
+/**************** Blue Bottom Container ****************/
+.blue-bottom-container {
+  padding-top: 288px;
+  background: url("../assets/images/blue-bg-bottom.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 0;
+}
+
+.blue-bottom-header {
+  max-width: 1002px;
+  height: 108px;
+  opacity: 0.78;
+  font-family: Montserrat;
+  font-size: 44px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.23;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #fff;
+  margin: 0 auto 70px;
+}
+
+.coverage-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 150px 100px;
+}
+
+.coverage-column {
+  width: calc(50% - 20px);
+  display: inline-block;
+  font-size: 15px;
+  margin: 0 10px;
+  vertical-align: top;
+}
+
+.coverage-box {
+  max-width: 453px;
+  background-color: #fff;
+  padding: 35px 33px 35px 23px;
+  font-size: 0;
+  margin-bottom: 51px;
+  -webkit-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
+}
+
+.coverage-box-last {
+  margin: 0 auto;
+}
+
+.coverage-thumbnail {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.coverage-content {
+  display: inline-block;
+  padding-top: 5px;
+  margin-left: 30px;
+  width: 60%;
+}
+
+.coverage-title {
+  vertical-align: top;
+  opacity: 0.78;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  text-align: left;
+  color: #016cb7;
+  margin-bottom: 12px;
+}
+
+.coverage-description {
+  opacity: 0.78;
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.31;
+  letter-spacing: normal;
+  text-align: left;
+  color: #6b7c93;
+}
+
+/**************** Footer ****************/
+footer {
+  padding: 100px 0;
+  margin: 0 auto;
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 150px;
+  font-size: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.foot-logo-container {
+  width: 150px;
+  height: 39px;
+  margin: 0 40px 0 0;
+}
+
+.footer-logo-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.footer-container-div {
+  align-items: center;
+}
+
+.all-rights-reserved {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #6b7c93;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-link-item {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #039be5;
+  margin-right: 20px;
+}
+
+.footer-social {
+  display: flex;
+  width: auto;
+}
+
+.footer-social div {
+  margin: 0 20px 0 0;
+}
+
+.footer-social div img {
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 1200px) {
+  main,
+  .header-container,
+  .insurance-inner,
+  .white-columns-container,
+  .coverage-container,
+  .footer-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  header ul li {
+    margin-right: 13px;
+  }
+  header ul li a {
+    font-size: 13px;
+  }
+  .arrow-drop-down {
+    top: 4px;
+  }
+  .sign-up {
+    font-size: 13px;
+    width: 105px;
+  }
+}
+
+@media only screen and (max-width: 959px) {
+  main,
+  .header-container,
+  .insurance-inner,
+  .white-columns-container,
+  .coverage-container,
+  .footer-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  header {
+    background-color: #fff;
+    height: 20px;
+  }
+
+  header ul {
+    display: none;
+  }
+
+  .logo-white {
+    display: none;
+  }
+
+  img.logo-blue {
+    display: inline-block;
+    width: 76px;
+    height: auto;
+  }
+
+  .hamburger {
+    display: block;
+    margin-top: -2px;
+    float: right;
+    width: 24px;
+    height: 24px;
+    font-family: "Material Icons";
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #039be5;
+  }
+
+  .header-container {
+    padding: 0 15px;
+  }
+
+  .footer-links,
+  .footer-container {
+    flex-direction: column;
+  }
+
+  /**************** Main Container Mobile ****************/
+  main {
+    margin: 0 auto 50px;
+  }
+
+  .main-description {
+    font-size: 22px;
+    width: 85%;
+    margin: 0 auto 30px;
+  }
+
+  .sure-you {
+    font-size: 44px;
+    margin: 27px 0 10px;
+  }
+
+  /**************** Insurance Mobile ****************/
+  .insurance-container {
+    height: auto;
+    padding: 50px 0 17px;
+    margin-bottom: 50px;
+  }
+  .insurance-inner {
+    flex-direction: column;
+    transform: translateY(0);
+    top: 0;
+  }
+  .insurance-inner div {
+    margin-bottom: 33px;
+  }
+  
+  /**************** Blue Bottom Mobile ****************/
+  .blue-bottom-container {
+    background: url("../assets/images/blue-bg-mobile-medium.png");
+    background-size: cover;
+    font-size: 0;
+    padding-top: 135px;
+  }
+
+  .white-column {
+    width: 100%;
+  }
+
+  .blue-bottom-header {
+    font-size: 32px;
+    width: 75%;
+    height: auto;
+    padding-top: 0;
+  }
+
+  .white-column-blue-font,
+  .box-title,
+  .box-description {
+    text-align: center;
+  }
+
+  .white-column-blue-font {
+    font-size: 32px;
+    margin: 0 auto 30px;
+  }
+
+  .box-title {
+    margin-bottom: 20px;
+  }
+
+  .white-column-list-container {
+    margin: 0 auto 40px;
+  }
+
+  .coverage-container {
+    padding-bottom: 50px;
+  }
+
+  .coverage-column {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .coverage-box {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .coverage-thumbnail {
+    margin-bottom: 20px;
+  }
+
+  .coverage-title {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .coverage-description {
+    text-align: center;
+  }
+
+  .coverage-content {
+    width: 90%;
+    margin: 0;
+  }
+
+  .coverage-column-mobile {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  /**************** Footer Mobile ****************/
+  footer {
+    padding: 40px 0 39px;
+  }
+
+  .footer-logo-container {
+    margin-bottom: 30px;
+  }
+
+  .all-rights-reserved {
+    margin-bottom: 20px;
+  }
+
+  .footer-link-item {
+    margin: 0 0 20px 0;
+    text-align: center;
+  }
+
+  .footer-social {
+    display: flex;
+    width: 120px;
+    justify-content: space-between;
+  }
+
+  .footer-social div {
+    margin: 0 0 0 0;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 450px) and (max-width: 959px) {
+  .blue-bottom-header {
+    padding-top: 100px;
+  }
+}

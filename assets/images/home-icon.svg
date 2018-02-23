@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+    <defs>
+        <circle id="a" cx="50" cy="50" r="50"/>
+        <path id="c" d="M28 43h45v30H28z"/>
+        <filter id="b" width="115.6%" height="123.3%" x="-7.8%" y="-8.3%" filterUnits="objectBoundingBox">
+            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.113875679 0"/>
+        </filter>
+        <path id="d" d="M44 51h13v22H44z"/>
+        <filter id="e" width="115.4%" height="109.1%" x="-7.7%" y="-4.5%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+        </filter>
+        <path id="f" d="M61 22h9v15l-9-5.714z"/>
+        <path id="g" d="M0 1h8v7H0z"/>
+        <filter id="h" width="125%" height="128.6%" x="-12.5%" y="-14.3%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+        </filter>
+        <path id="i" d="M0 1h8v7H0z"/>
+        <filter id="j" width="125%" height="128.6%" x="-12.5%" y="-14.3%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+        </filter>
+        <path id="k" d="M50 20l30 24H20z"/>
+        <path id="l" d="M0 0h23v15H0z"/>
+        <path id="n" d="M0 0h16v10H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" opacity=".779">
+        <use fill="#F2F4F7" xlink:href="#a"/>
+        <circle cx="50" cy="50" r="49.5" stroke="#DADFE9"/>
+        <use fill="#000" filter="url(#b)" xlink:href="#c"/>
+        <use fill="#FFF" xlink:href="#c"/>
+        <path stroke="#039BE5" d="M28.5 43.5h44v29h-44z"/>
+        <use fill="#FFF" xlink:href="#d"/>
+        <use fill="#000" filter="url(#e)" xlink:href="#d"/>
+        <path stroke="#039BE5" d="M44.5 51.5h12v21h-12z"/>
+        <ellipse cx="53.91" cy="62.528" fill="#039BE5" rx="1" ry="1.003"/>
+        <use fill="#F2F6FA" xlink:href="#f"/>
+        <path stroke="#039BE5" d="M61.5 22.5v8.51l8 5.08V22.5h-8z"/>
+        <g>
+            <g transform="translate(61 50)">
+                <use fill="#FFF" xlink:href="#g"/>
+                <use fill="#000" filter="url(#h)" xlink:href="#g"/>
+                <path stroke="#039BE5" d="M.5 1.5h7v6h-7z"/>
+            </g>
+            <path fill="#039BE5" d="M65.438 50.951v6.223h-.876V50.95z"/>
+            <path fill="#039BE5" d="M61.889 54.5h6.222v.875H61.89z"/>
+        </g>
+        <g>
+            <g transform="translate(33 50)">
+                <use fill="#FFF" xlink:href="#i"/>
+                <use fill="#000" filter="url(#j)" xlink:href="#i"/>
+                <path stroke="#039BE5" d="M.5 1.5h7v6h-7z"/>
+            </g>
+            <path fill="#039BE5" d="M37.438 50.951v6.223h-.876V50.95z"/>
+            <path fill="#039BE5" d="M33.889 54.5h6.222v.875H33.89z"/>
+        </g>
+        <path fill="#039BE5" d="M39 43h22v1H39z"/>
+        <g>
+            <use fill="#FFF" xlink:href="#k"/>
+            <path stroke="#039BE5" d="M50 20.64L21.425 43.5h57.15L50 20.64z"/>
+        </g>
+        <g transform="translate(60 58)">
+            <mask id="m" fill="#fff">
+                <use xlink:href="#l"/>
+            </mask>
+            <g mask="url(#m)">
+                <g fill="#016CB7" transform="translate(.852 4.412)">
+                    <ellipse cx="5.111" cy="10.588" rx="5.111" ry="5.294"/>
+                    <ellipse cx="10.222" cy="5.294" rx="5.111" ry="5.294"/>
+                    <ellipse cx="12.778" cy="9.706" rx="4.259" ry="4.412"/>
+                    <ellipse cx="17.463" cy="11.029" rx="2.981" ry="3.088"/>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(-1 0 0 1 33 63)">
+            <mask id="o" fill="#fff">
+                <use xlink:href="#n"/>
+            </mask>
+            <g mask="url(#o)">
+                <g fill="#016CB7" transform="translate(.889 2.727)">
+                    <ellipse cx="3.556" cy="7.273" rx="3.556" ry="3.636"/>
+                    <ellipse cx="7.111" cy="3.636" rx="3.556" ry="3.636"/>
+                    <ellipse cx="8.889" cy="6.667" rx="2.963" ry="3.03"/>
+                    <ellipse cx="12.148" cy="7.576" rx="2.074" ry="2.121"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

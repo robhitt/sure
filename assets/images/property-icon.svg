@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+    <defs>
+        <circle id="a" cx="50" cy="50" r="50"/>
+        <rect id="c" width="40" height="50" x="30" y="28" rx="3"/>
+        <filter id="b" width="117.5%" height="114%" x="-8.8%" y="-5%" filterUnits="objectBoundingBox">
+            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1"/>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+        </filter>
+        <path id="e" d="M33 31h34v44H33V34.957z"/>
+        <filter id="d" width="105.9%" height="104.5%" x="-2.9%" y="-2.3%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetInner1"/>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" k2="-1" k3="1" operator="arithmetic" result="shadowInnerInner1"/>
+            <feColorMatrix in="shadowInnerInner1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" opacity=".779">
+        <use fill="#F2F4F7" xlink:href="#a"/>
+        <circle cx="50" cy="50" r="49.5" stroke="#DADFE9"/>
+        <path stroke="#016CB7" d="M50.5 15L69 35H32z"/>
+        <g transform="rotate(90 50 53)">
+            <use fill="#000" filter="url(#b)" xlink:href="#c"/>
+            <use fill="#FFF" xlink:href="#c"/>
+            <rect width="39" height="49" x="30.5" y="28.5" stroke="#039BE5" rx="3"/>
+        </g>
+        <path fill="#D5DAE4" d="M29 59.54l10.563-6.605 10.56 5.584L63.2 47l7.659 8.665V69.57H29z"/>
+        <g transform="rotate(90 50 53)">
+            <use fill="#000" filter="url(#d)" xlink:href="#e"/>
+            <path stroke="#039BE5" d="M33.5 31.5v43h33v-43h-33z"/>
+        </g>
+        <rect width="3" height="3" x="49" y="14" fill="#039BE5" rx="1.5"/>
+        <rect width="8" height="8" x="38" y="42" fill="#D5DAE4" rx="4"/>
+    </g>
+</svg>
