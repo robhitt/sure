@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: 'Lato', sans-serif;
+  /* font-weight: 300; */
 }
 
 body {
@@ -9,13 +10,56 @@ body {
   /* background: linear-gradient(rgb(112, 190, 245), grey) */
 }
 
+header {
+  display: block;
+  position: fixed;
+  width: 100%;
+  -webkit-box-shadow: 4px 4px 10px 0px rgba(186,186,186,1);
+  -moz-box-shadow: 4px 4px 10px 0px rgba(186,186,186,1);
+  box-shadow: 4px 4px 10px 0px rgba(186,186,186,1);
+  background-color: #fff;
+  padding: 10px;
+  color: #000;
+  z-index: 2;
+}
+
 header h1 {
   text-align: center;
-  margin: 20px 10px;
+  width: 100%;
+  font-size: 22px;
+}
+
+.back-to {
+  float: left;
+  color: #000;
+  text-decoration: none;
+  top: 17px;
+  left: 25px;
+  position: absolute;
+  font-size: 14px;
+}
+
+.back-to a {
+  text-decoration: none;
+}
+
+.back-to a:hover {
+  text-decoration: underline;
+}
+
+.back-to a:visited,
+.back-to a:active {
+  color: #000;
+}
+
+.header-author {
+  font-size: 10px
 }
 
 main {
-  font-size: 0
+  font-size: 0;
+  position: relative;
+  top: 70px;
 }
 
 #story-container {
@@ -24,6 +68,7 @@ main {
   width: calc(75% - 20px);
   display: inline-block;
   vertical-align: top;
+  text-align: center;
 }
 
 .card-title,
@@ -43,8 +88,8 @@ main {
 
 .card {
   display: inline-block;
-  width: calc(100% / 3 - 37px); /* 22px is 20px margin + 2 px border */
-  margin: 0 10px 20px;
+  width: calc(100% / 3 - 22px);
+  margin: 0 10px 20px 0;
   border: 1px solid #fff;
   font-size: 14px;
   border-radius: 5px;
@@ -53,9 +98,23 @@ main {
   padding: 5px;
   transition: .1s ease-in;
   vertical-align: top;
+  background-color: rgb(112, 190, 245);
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+}
+
+.card-title {
+  height: 150px;
+  overflow-y: auto;
+}
+
+.card-title-text {
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+  padding: 0 8px;
+  font-size: 18px;
 }
 
 .card:hover {
@@ -67,15 +126,24 @@ main {
 }
 
 .color-card {
-  color: black;
+  color: rgb(43, 36, 36);
+  font-size: 20px;
+  font-weight: 300;
 }
 
 .score-container {
   margin: 15px 0;
 }
 
+.points {
+  margin-right: 5px;
+  font-size: 12px;
+  width: 300;
+}
+
 .by {
-  margin: 10px 0 10px;
+  font-size: 12px;
+  width: 300;
 }
 
 .submit-box {
@@ -86,6 +154,15 @@ main {
   padding: 10px 15px;
   border-radius: 5px;
   margin: 10px 0;
+  cursor: pointer;
+  border: 1px solid #000;
+  transition: .1s ease-in;
+}
+
+.submit-button:hover {
+  border: 1px solid #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 .bookmark-container {
@@ -98,7 +175,7 @@ main {
   background-color: #fff;
   font-size: 14px;
   border-radius: 5px 5px 0 0;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -107,6 +184,31 @@ main {
   padding: 10px 0 10px 12px;
   letter-spacing: 5px;
   text-transform: capitalize;
+  font-size: 14px;
+}
+
+.bookmark-icon {
+  margin: 0 5px 0 1px;
+}
+
+.clear-all-container {
+  margin: 8px 0 0 -1px;
+}
+
+.clear-all {
+  font-size: 14px;
+  color: red;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.clear-all-icon {
+  margin-right: 3px;
+  color: red;
+}
+
+.view-all {
+  margin-top: 10px;
 }
 
 .bookmark-item {
@@ -116,6 +218,10 @@ main {
 
 .bookmark-item p {
   margin-bottom: 10px;
+}
+
+.button-container {
+  text-align: center;
 }
 
 .delete-bookmark-btn {
@@ -128,6 +234,7 @@ main {
   outline: none;
   cursor: pointer;
   border-radius: 5px;
+  width: 100px
 }
 
 .delete-bookmark-btn:hover {
@@ -137,15 +244,55 @@ main {
 .visit-bookmark-btn {
   margin: 4px auto 15px;
   padding: 8px 15px;
-  background-color: green;
+  background-color:#4cb3f3;
   color: #fff;
   border: none;
   transition: .05s ease-in;
   outline: none;
   cursor: pointer;
   border-radius: 5px;
+  width: 100px;
 }
 
 .visit-bookmark-btn:hover {
-  background-color: rgb(10, 165, 10);
+  background-color: #6cc0f5;
+}
+
+@media only screen and (max-width: 1023px) {
+  .bookmark-container {
+    width: 50%;
+  }
+
+  #story-container {
+    width: calc(50% - 20px);
+  }
+
+  .card {
+    width: calc(100% / 2 - 22px);
+  }
+
+  .card-title-text {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .back-to {
+    display: none;
+  }
+
+  .bookmark-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #story-container {
+    width: calc(100%);
+    padding-right: 0;
+  }
+
+  .card {
+    width: calc(90%);
+    margin-right: 0;
+  }
 }

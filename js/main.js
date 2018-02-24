@@ -62,14 +62,23 @@ window.onload = function() {
         
         <input type="hidden" data-url="${individualPostData.url}" data-score="${individualPostData.score}" data-author="${individualPostData.by}" data-title="${individualPostData.title}" data-id="${individualPostData.id}" />
 
+          
           <a href="${individualPostData.url}" target="_blank">
-            <div class="card-title">${individualPostData.title}</div>
+            <div class="card-title">
+              <div class="card-title-text">
+                ${individualPostData.title}
+              </div>
+            </div>
           </a>
 
           <div class="score-container">
-            <span class="color-card score">${individualPostData.score}</span> points
-            <span class="color-card author">by:</span> ${individualPostData.by}
+            <span class="color-card score">${individualPostData.score}</span>
+            <span class="points">points</span>
+
+            <span class="color-card author">by:</span>
+            <span class="by">${individualPostData.by}</span>
           </div>
+          
             
           <div class="submit-box">
           </div>
@@ -83,15 +92,13 @@ window.onload = function() {
   }
 
   // Add event listeners to all Form Buttons now that it's built
-  
   setTimeout(function addSubmitListener() {
     let cardForms = document.querySelectorAll(".card-form");
     
     cardForms.forEach( buttonClick => {
       buttonClick.addEventListener("submit", createBookmark);
     });
-    console.log("Button listeners added");
-  }, 1000);
+  }, 2000);
 
   function createBookmark(event) {
     event.preventDefault();
@@ -130,8 +137,10 @@ window.onload = function() {
           <p>${bookmark.title}</p>
           <p>By: ${bookmark.author}</p>
           <p>Rank: ${bookmark.score}</p>
-          <button type="button" class="delete-bookmark-btn" data-deleteId="${bookmark.id}-marked">Delete Bookmark</button>
-          <a href="${bookmark.url}" target="_blank"><button type="button" class="visit-bookmark-btn">Visit Bookmark</button></a>
+          <div class="button-container">
+            <button type="button" class="delete-bookmark-btn" data-deleteId="${bookmark.id}-marked">Delete</button>
+            <a href="${bookmark.url}" target="_blank"><button type="button" class="visit-bookmark-btn">Visit Page</button></a>
+          </div>
         </div>
       `
       bookmarkList.insertAdjacentHTML("afterbegin", bookmarkContent);
@@ -144,21 +153,27 @@ window.onload = function() {
   retreiveBookmarksFromLocalStorage();
   function retreiveBookmarksFromLocalStorage() {
     let bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+    
     let bookmarkContent;
     const bookmarkList = document.getElementById("bookmark-list");
     
-    bookmarks.forEach( bookmark => {
-      bookmarkContent = `
-        <div class="bookmark-item" id="${bookmark.id}-marked">
-          <p>${bookmark.title}</p>
-          <p>By: ${bookmark.author}</p>
-          <p>Rank: ${bookmark.score}</p>
-          <button type="button" class="delete-bookmark-btn" data-deleteId="${bookmark.id}-marked">Delete Bookmark</button>
-          <a href="${bookmark.url}" target="_blank"><button type="button" class="visit-bookmark-btn">Visit Bookmark</button></a>
-        </div>
-      `
-      bookmarkList.insertAdjacentHTML("beforeend", bookmarkContent);
-    });
+    if (bookmarks !== null) {
+      bookmarks.forEach( bookmark => {
+        bookmarkContent = `
+          <div class="bookmark-item" id="${bookmark.id}-marked">
+            <p>${bookmark.title}</p>
+            <p>By: ${bookmark.author}</p>
+            <p>Rank: ${bookmark.score}</p>
+            <div class="button-container">
+              <button type="button" class="delete-bookmark-btn" data-deleteId="${bookmark.id}-marked">Delete</button>
+              <a href="${bookmark.url}" target="_blank"><button type="button" class="visit-bookmark-btn">Visit Page</button></a>
+            </div>
+          </div>
+        `
+        bookmarkList.insertAdjacentHTML("beforeend", bookmarkContent);
+      });
+    }
+    
   }
 
   const deleteBookmarkBtn = document.querySelectorAll(".delete-bookmark-btn");
@@ -185,6 +200,16 @@ window.onload = function() {
     let bookmarkToBeDeleted = document.getElementById(`${event.target.dataset.deleteid}`);
     bookmarkToBeDeleted.parentNode.removeChild(bookmarkToBeDeleted);
     // bookmarkToBeDeleted.style.display = "none";
+  }
+
+  const clearBookmarks = document.querySelector(".clear-all");
+  clearBookmarks.addEventListener("click", removeAllBookMarks);
+
+  function removeAllBookMarks() {
+    const bookmarkList = document.getElementById("bookmark-list");
+    bookmarkList.innerHTML = "";
+    localStorage.clear();
+    // localStorage.setItem("bookmarks", []);
   }
 
 };

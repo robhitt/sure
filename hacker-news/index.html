@@ -5,15 +5,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Rob Hitt Code Challenge - SURE. - Hacker News</title>
+  <title>Rob Hitt Code Challenge - SURE. - Hacker News Bookmark App</title>
 
   <meta name="author" content="Rob Hitt">
   <meta name="description" content="">
   <meta name="keywords" content="">
   <link rel="shortcut icon" href="https://www.sureapp.com/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <link rel="stylesheet" href="../css/hacker-news.css" type="text/css">
 
   <script type="text/javascript" src="../js/main.js"></script>
@@ -21,28 +20,46 @@
 
 <body>
   <header>
-    <h1>Hacker Rank Book Mark by Rob Hitt</h1>
-  </header>
+    <h1> 
+      <div class="back-to">
+        <a href="../"><i class="fas fa-arrow-left"></i> Back to SURE.</a>
+      </div>
 
+      <div>
+        <i class="far fa-bookmark bookmark-icon"></i>Hacker News Bookmarker
+        <span class="header-author">by Rob Hitt</span>
+    </div>
+    </h1>
+  </header>
 
   <main>
     <div class="bookmark-container">
       <div class="bookmarks">
         <div class="bookmark-header">
-          Bookmarks
-        </div>
-        <div id="bookmark-list">
+          
+          <div class="bookmark-header-container">
+            <i class="fas fa-bookmark bookmark-icon"></i>
+            Bookmarks
+          </div>
+          
+          <div class="clear-all-container">
+            <span class="clear-all">
+              <i class="fas fa-minus-circle clear-all-icon"></i>
+              Clear All
+            </span>
+          </div>
 
+          <div class="view-all">
+              <i class="fas fa-search-plus"></i>
+              <span class="view-all">
+                View All
+              </span>
+          </div>
         </div>
+        <div id="bookmark-list"></div>
       </div>
     </div>
-
-
-    <div id="story-container">
-
-    </div>
-
-
+    <div id="story-container"></div>
   </main>
 
 </body>
