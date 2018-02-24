@@ -196,10 +196,8 @@ window.onload = function() {
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
 
     // Remove bookmark from DOM
-    // debugger;
     let bookmarkToBeDeleted = document.getElementById(`${event.target.dataset.deleteid}`);
     bookmarkToBeDeleted.parentNode.removeChild(bookmarkToBeDeleted);
-    // bookmarkToBeDeleted.style.display = "none";
   }
 
   const clearBookmarks = document.querySelector(".clear-all");
@@ -212,4 +210,30 @@ window.onload = function() {
     // localStorage.setItem("bookmarks", []);
   }
 
+  const viewAll = document.querySelector(".view-all");
+  viewAll.addEventListener("click", toggleBookmarks);
+  
+  let bookmarksAreOpen = false;
+
+  function toggleBookmarks() {
+    const body = document.querySelector("body");
+    const storyContainer = document.getElementById("story-container");
+    const viewAllText = document.querySelector(".view-all-text");
+    
+    const bookmarkContainer = document.querySelector(".bookmark-container");
+
+    if (!bookmarksAreOpen) {
+      body.classList.add("black-background");
+      bookmarkContainer.classList.add("bookmarks-open");
+      storyContainer.style.display = "none";
+      viewAllText.textContent = "Close Bookmarks";
+    } else {
+      body.classList.remove("black-background");
+      bookmarkContainer.classList.remove("bookmarks-open");
+      storyContainer.style.display = "inline-block";
+      viewAllText.textContent = "View All";
+    }
+
+    bookmarksAreOpen = !bookmarksAreOpen;
+  }
 };

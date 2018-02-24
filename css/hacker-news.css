@@ -33,7 +33,7 @@ header h1 {
   float: left;
   color: #000;
   text-decoration: none;
-  top: 17px;
+  top: 15px;
   left: 25px;
   position: absolute;
   font-size: 14px;
@@ -41,6 +41,7 @@ header h1 {
 
 .back-to a {
   text-decoration: none;
+  color: #000;
 }
 
 .back-to a:hover {
@@ -202,13 +203,26 @@ main {
   cursor: pointer;
 }
 
+.clear-all:hover,
+.clear-all:active {
+  color: rgb(218, 132, 132);
+  margin-left: 3px;
+}
+
 .clear-all-icon {
   margin-right: 3px;
-  color: red;
+  color: rgb(255, 0, 0);
 }
 
 .view-all {
   margin-top: 10px;
+  cursor: pointer;
+}
+
+.view-all:hover,
+.view-all:active {
+  color: rgb(122, 122, 122);
+  margin-left: 3px;
 }
 
 .bookmark-item {
@@ -295,4 +309,21 @@ main {
     width: calc(90%);
     margin-right: 0;
   }
+}
+
+.black-background {
+  background-color: #000;
+}
+
+.bookmarks-open {
+  width: 100%;
+	position: absolute;
+	z-index: 3;
+	height: 100%;
+	background-color: #000;
+	padding-top: 30px;
+}
+
+.hide {
+  display: none;
 }
