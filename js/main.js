@@ -1,7 +1,7 @@
 window.onload = function() {
   const topStories = "https://hacker-news.firebaseio.com/v0/topstories.json";
   
-  // Request the current top 100 story ids from hacker news
+  // Request the current top story id's from hacker news
   let storyIdRequest = new XMLHttpRequest();
   storyIdRequest.open("GET", topStories);
 
@@ -10,59 +10,58 @@ window.onload = function() {
       let postIdData = JSON.parse(storyIdRequest.responseText);
       postIdData = postIdData.slice(0, 100);
       renderProductId(postIdData);
-
     } else {
       console.log("Connected to server but returned an error");
     }
   }
 
   storyIdRequest.onerror = function() {
-    console.log("Data not received.");
+    console.log("Id request data not received.");
   }
 
   storyIdRequest.send();
 
-  // Render each blog post
+  // Request data of each individual story id
   function renderProductId(postIdData) {
-    postIdData.forEach( (id, index) => {
+    postIdData.forEach( (id) => {
       storyRequest(id);
     });
   }
 
   // XML Request for Individual Story Data
   function storyRequest(id) {
-    const exampleStory = `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
+    const individualStory = `https://hacker-news.firebaseio.com/v0/item/${id}.json`;
     
     let storyRequest = new XMLHttpRequest();
     let storyData;
 
-    storyRequest.open("GET", exampleStory);
+    storyRequest.open("GET", individualStory);
 
     storyRequest.onload = function() {
       if (storyRequest.status >= 200 && storyRequest.status < 400) {
         storyData = JSON.parse(storyRequest.responseText);
-        
         renderPosts(storyData);
-
       } else {
         console.log("Connected to server but returned an error");
       }      
     }
 
+    storyIdRequest.onerror = function() {
+      console.log("Story request data not received.");
+    }
+
     storyRequest.send();
   }
 
-  const storyContainer = document.querySelector("#story-container");
+  // Build each individual story/post
+  const storyContainer = document.getElementById("story-container");
   function renderPosts(individualPostData) {
     let cardHTML;
     
     cardHTML = `
       <div class="card">
         <form class="card-form" id="${individualPostData.id}">
-        
-        <input type="hidden" data-url="${individualPostData.url}" data-score="${individualPostData.score}" data-author="${individualPostData.by}" data-title="${individualPostData.title}" data-id="${individualPostData.id}" />
-
-          
+          <input type="hidden" data-url="${individualPostData.url}" data-score="${individualPostData.score}" data-author="${individualPostData.by}" data-title="${individualPostData.title}" data-id="${individualPostData.id}" />
           <a href="${individualPostData.url}" target="_blank">
             <div class="card-title">
               <div class="card-title-text">
@@ -70,112 +69,89 @@ window.onload = function() {
               </div>
             </div>
           </a>
-
           <div class="score-container">
             <span class="color-card score">${individualPostData.score}</span>
             <span class="points">points</span>
-
             <span class="color-card author">by:</span>
             <span class="by">${individualPostData.by}</span>
           </div>
-          
-            
-          <div class="submit-box">
-          </div>
-          
+          <div class="submit-box"></div>
           <button type="submit" value="Add Bookmark" class="submit-button">Add Bookmark</button>
         <form>
       </div>
     `;
 
     storyContainer.insertAdjacentHTML("beforeend", cardHTML);
-  
     currentCardForm = document.getElementById(`${individualPostData.id}`);
     currentCardForm.addEventListener("submit", createBookmark);    
   }
 
+  // Create bookmark from news story submit
   function createBookmark(event) {
     event.preventDefault();
-    
-    let id = event.currentTarget[0].dataset.id;    
-    
-    let bookmark = {
-      id: event.currentTarget[0].dataset.id,
-      author: event.currentTarget[0].dataset.author,
-      score: event.currentTarget[0].dataset.score,
-      title: event.currentTarget[0].dataset.title,
-      url: event.currentTarget[0].dataset.url
+    const dataPath = event.currentTarget[0].dataset;
+    const bookmark = {
+      id: dataPath.id,
+      author: dataPath.author,
+      score: dataPath.score,
+      title: dataPath.title,
+      url: dataPath.url
     }
     
+    // Update local storage
+    // Add bookmark to DOM
     if (localStorage.getItem("bookmarks") === null) {
-      bookmarks = [];
+      let bookmarks = [];
       bookmarks.push(bookmark);
       localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     } else {
-      // Retreive bookmarks from local storage
       let bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
       bookmarks.push(bookmark);    
-
-      // Reset local storage
       localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     } 
 
-
-    const currentCard = document.getElementById(event.currentTarget[0].dataset.id);
+    // When bookmarking a story I chose
+    // to remove it from the page 
+    const currentCard = document.getElementById(dataPath.id);
     currentCard.parentElement.style.display = "none";
 
-    // ********************************************** //
-    let bookmarkContent;
-    const bookmarkList = document.getElementById("bookmark-list");
-    
-      bookmarkContent = `
-        <div class="bookmark-item" id="${bookmark.id}-marked">
-          <p>${bookmark.title}</p>
-          <p>By: ${bookmark.author}</p>
-          <p>Rank: ${bookmark.score}</p>
-          <div class="button-container">
-            <button type="button" class="delete-bookmark-btn" data-deleteId="${bookmark.id}-marked">Delete</button>
-            <a href="${bookmark.url}" target="_blank"><button type="button" class="visit-bookmark-btn">Visit Page</button></a>
-          </div>
-        </div>
-      `
-      bookmarkList.insertAdjacentHTML("afterbegin", bookmarkContent);
-      const newBookmark = document.getElementById(`${bookmark.id}-marked`);
-      newBookmark.addEventListener("click", deleteBookmark);
-    // ********************************************** //
-
+    renderBookmark(bookmark);
   }
-
-  retreiveBookmarksFromLocalStorage();
-  function retreiveBookmarksFromLocalStorage() {
+  
+  // Grab bookmark list from local storage and 
+  // render the list to the page on app load
+  retreiveAndRenderBookmarksFromLocalStorage();
+  function retreiveAndRenderBookmarksFromLocalStorage() {
     let bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
-    
-    let bookmarkContent;
-    const bookmarkList = document.getElementById("bookmark-list");
-    
+        
     if (bookmarks !== null) {
       bookmarks.forEach( bookmark => {
-        bookmarkContent = `
-          <div class="bookmark-item" id="${bookmark.id}-marked">
-            <p>${bookmark.title}</p>
-            <p>By: ${bookmark.author}</p>
-            <p>Rank: ${bookmark.score}</p>
-            <div class="button-container">
-              <button type="button" class="delete-bookmark-btn" data-deleteId="${bookmark.id}-marked">Delete</button>
-              <a href="${bookmark.url}" target="_blank"><button type="button" class="visit-bookmark-btn">Visit Page</button></a>
-            </div>
-          </div>
-        `
-        bookmarkList.insertAdjacentHTML("beforeend", bookmarkContent);
+        renderBookmark(bookmark);
       });
     }
-    
   }
 
-  const deleteBookmarkBtn = document.querySelectorAll(".delete-bookmark-btn");
-  deleteBookmarkBtn.forEach( button => {
-    button.addEventListener("click", deleteBookmark);
-  });
+  // Create individual bookmark
+  function renderBookmark(bookmark) {
+    let bookmarkContent;
+    const bookmarkList = document.getElementById("bookmark-list");
+    
+    bookmarkContent = `
+      <div class="bookmark-item" id="${bookmark.id}-marked">
+        <p>${bookmark.title}</p>
+        <p>By: ${bookmark.author}</p>
+        <p>Points: ${bookmark.score}</p>
+        <div class="button-container">
+          <button type="button" class="delete-bookmark-btn" data-deleteId="${bookmark.id}-marked">Delete</button>
+          <a href="${bookmark.url}" target="_blank"><button type="button" class="visit-bookmark-btn">Visit Page</button></a>
+        </div>
+      </div>
+    `
+    bookmarkList.insertAdjacentHTML("afterbegin", bookmarkContent);
+
+    const deleteBookmarkBtn = document.querySelector(".delete-bookmark-btn");
+    deleteBookmarkBtn.addEventListener("click", deleteBookmark);
+  }
 
   function deleteBookmark(event) {
     let bookmarkId = event.target.dataset.deleteid;
@@ -183,12 +159,13 @@ window.onload = function() {
     
     // First delete from local stoarge
     let bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
-
-    for (var i = 0; i < bookmarks.length; i++) {
-      if (bookmarks[i].id === bookmarkId) {
-        bookmarks.splice(i, 1);
+    
+    bookmarks.forEach( (bookmark, index) => {
+      if (bookmark.id === bookmarkId) {
+        bookmarks.splice(index, 1);
       }
-    }
+    });
+
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
 
     // Remove bookmark from DOM
@@ -203,19 +180,27 @@ window.onload = function() {
     const bookmarkList = document.getElementById("bookmark-list");
     bookmarkList.innerHTML = "";
     localStorage.clear();
-    // localStorage.setItem("bookmarks", []);
   }
 
+  // Toggle bookmarks modal
   const viewAll = document.querySelector(".view-all");
-  viewAll.addEventListener("click", toggleBookmarks);
-  
+  const closeCircle = document.querySelector(".close-circle");
   let bookmarksAreOpen = false;
+  viewAll.addEventListener("click", toggleBookmarks);
+  closeCircle.addEventListener("click", toggleBookmarks);
+
+  // Escape key closes bookmarks modal
+  window.addEventListener("keydown", escapeModal);
+  function escapeModal(event) {
+    if (event.which === 27 && bookmarksAreOpen === true) {
+      toggleBookmarks();
+    }
+  }
 
   function toggleBookmarks() {
     const body = document.querySelector("body");
     const storyContainer = document.getElementById("story-container");
     const viewAllText = document.querySelector(".view-all-text");
-    
     const bookmarkContainer = document.querySelector(".bookmark-container");
 
     if (!bookmarksAreOpen) {
@@ -223,11 +208,13 @@ window.onload = function() {
       bookmarkContainer.classList.add("bookmarks-open");
       storyContainer.style.display = "none";
       viewAllText.textContent = "Close Bookmarks";
+      closeCircle.style.display = "block";
     } else {
       body.classList.remove("black-background");
       bookmarkContainer.classList.remove("bookmarks-open");
       storyContainer.style.display = "inline-block";
       viewAllText.textContent = "View All";
+      closeCircle.style.display = "none";
     }
 
     bookmarksAreOpen = !bookmarksAreOpen;
