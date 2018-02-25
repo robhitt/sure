@@ -9,6 +9,10 @@ body {
   background: url("../assets/images/blue-bg.svg") no-repeat;
 }
 
+.mobile-menu {
+  display: none;
+}
+
 header {
   width: 100%;
   text-transform: uppercase;
@@ -113,7 +117,8 @@ li .products {
   color: rgb(83, 167, 213);
 }
 
-.hamburger {
+.hamburger,
+.close-button {
   display: none;
 }
 
@@ -524,6 +529,29 @@ footer {
     padding-right: 0;
   }
 
+  .mobile-menu {
+    display: none;
+    text-align: center;
+    background-color: #fff;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+  }
+
+  .mobile-menu-display {
+    display: block;
+  }
+
+  .mobile-menu-link {
+    padding: 10px 0;
+    color: #039be5;
+    border-top: 1px solid rgba(197, 199, 199, 0.3);
+  }
+
+  .mobile-menu-link:hover {
+    text-decoration: underline;
+  }
+
   header {
     background-color: #fff;
     height: 20px;
@@ -543,8 +571,8 @@ footer {
     height: auto;
   }
 
-  .hamburger {
-    display: block;
+  .hamburger,
+  .close-button {
     margin-top: -2px;
     float: right;
     width: 24px;
@@ -557,6 +585,22 @@ footer {
     line-height: 1;
     letter-spacing: normal;
     color: #039be5;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .close-button {
+    display: none;
+  }
+
+  .mobile-menu-display {
+    display: block;
+  }
+
+  .remove-hamburger {
+    display: none;
   }
 
   .header-container {

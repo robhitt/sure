@@ -7,7 +7,9 @@
   <meta name="author" content="Rob Hitt">
   <meta name="description" content="Rob Hitt Sure App code challenge">
   <meta name="keywords" content="Sure Code Challenge Insurance">
+
   <title>Rob Hitt Code Challenge - SURE. - Hacker News</title>
+
   <link rel="shortcut icon" href="https://www.sureapp.com/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,9 +18,20 @@
   <link href="css/master.css" rel="stylesheet" type="text/css">
 
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
 </head>
 
 <body>
+  <div class="mobile-menu">
+    <ul class="mobile-menu-container">
+      <li class="mobile-menu-link">Products</li>
+      <li class="mobile-menu-link">Support</li>
+      <li class="mobile-menu-link">Claims</li>
+      <li class="mobile-menu-link">Download App</li>
+      <li class="mobile-menu-link">Login</li>
+      <li class="mobile-menu-link">Sign Up</li>
+    </ul>
+  </div>
 
   <header>
     <div class="header-container">
@@ -59,6 +72,7 @@
         </div>
       </ul>
       <i class="material-icons hamburger">menu</i>
+      <i class="material-icons close-button">close</i>
     </div>
   </header>
 
@@ -181,36 +195,36 @@
           </div>
         </div>
 
-        
-          <div class="coverage-box">
-            <div class="coverage-thumbnail">
-              <img src="./assets/images/event-icon.svg" alt="Catastrophic Event Insurance">
+
+        <div class="coverage-box">
+          <div class="coverage-thumbnail">
+            <img src="./assets/images/event-icon.svg" alt="Catastrophic Event Insurance">
+          </div>
+          <div class="coverage-content">
+            <div class="coverage-title">
+              Catastrophic Event Coverage
             </div>
-            <div class="coverage-content">
-              <div class="coverage-title">
-                Catastrophic Event Coverage
-              </div>
-              <div class="coverage-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              </div>
+            <div class="coverage-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </div>
-          
+          </div>
+
         </div>
       </div>
       <div class="coverage-column-mobile">
-      <div class="coverage-box coverage-box-last">
-        <div class="coverage-thumbnail">
-          <img src="./assets/images/home-icon.svg" alt="Catastrophic Home Coverage">
-        </div>
-        <div class="coverage-content">
-          <div class="coverage-title">
-            Home Coverage
+        <div class="coverage-box coverage-box-last">
+          <div class="coverage-thumbnail">
+            <img src="./assets/images/home-icon.svg" alt="Catastrophic Home Coverage">
           </div>
-          <div class="coverage-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          <div class="coverage-content">
+            <div class="coverage-title">
+              Home Coverage
+            </div>
+            <div class="coverage-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
   </div>
