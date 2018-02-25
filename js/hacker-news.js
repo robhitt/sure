@@ -90,6 +90,7 @@ window.onload = function() {
   function createBookmark(event) {
     event.preventDefault();
     const dataPath = event.currentTarget[0].dataset;
+    
     const bookmark = {
       id: dataPath.id,
       author: dataPath.author,
