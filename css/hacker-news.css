@@ -249,7 +249,7 @@ main {
 
 .color-card {
   color: rgb(43, 36, 36);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 300;
 }
 
@@ -260,6 +260,7 @@ main {
 .by,
 .points {
   font-size: 12px;
+  text-decoration: underline;
 }
 
 .points {
