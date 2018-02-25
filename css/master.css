@@ -546,6 +546,7 @@ footer {
     padding: 10px 0;
     color: #039be5;
     border-top: 1px solid rgba(197, 199, 199, 0.3);
+    list-style: none;
   }
 
   .mobile-menu-link:hover {
