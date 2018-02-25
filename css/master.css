@@ -605,7 +605,7 @@ footer {
   }
 
   .header-container {
-    padding: 0 15px;
+    padding: 0 10px;
   }
 
   .footer-links,
@@ -619,14 +619,20 @@ footer {
   }
 
   .main-description {
-    font-size: 22px;
+    font-size: 16px;
     width: 85%;
     margin: 0 auto 30px;
+    line-height: 1.38;
+    letter-spacing: 0.1px;
   }
 
   .sure-you {
     font-size: 44px;
     margin: 27px 0 10px;
+  }
+
+  .cta-button {
+    margin-bottom: 30px
   }
 
   /**************** Insurance Mobile ****************/
@@ -661,6 +667,7 @@ footer {
     width: 75%;
     height: auto;
     padding-top: 0;
+    margin-bottom: 30px;
   }
 
   .white-column-blue-font,
@@ -696,6 +703,13 @@ footer {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 30px;
+    padding-bottom: 32px;
+    margin-bottom: 30px;
+  }
+
+  .coverage-content {
+    padding: 0;
   }
 
   .coverage-thumbnail {
@@ -737,6 +751,10 @@ footer {
   .footer-link-item {
     margin: 0 0 20px 0;
     text-align: center;
+  }
+
+  .footer-products {
+    display: none;
   }
 
   .footer-social {

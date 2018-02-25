@@ -8,7 +8,6 @@ window.onload = function() {
 
   function toggleMenu() {
     if (!menuIsOpen) {
-      console.log("hello");
       mobileMenu.classList.add("mobile-menu-display");
       closeButton.classList.add("mobile-menu-display");
       hamburger.classList.add("remove-hamburger")
