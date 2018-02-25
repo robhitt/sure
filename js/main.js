@@ -57,8 +57,8 @@ window.onload = function() {
     let cardHTML;
     
     cardHTML = `
-      <div class="card" id="${individualPostData.id}">
-        <form class="card-form">
+      <div class="card">
+        <form class="card-form" id="${individualPostData.id}">
         
         <input type="hidden" data-url="${individualPostData.url}" data-score="${individualPostData.score}" data-author="${individualPostData.by}" data-title="${individualPostData.title}" data-id="${individualPostData.id}" />
 
@@ -89,19 +89,14 @@ window.onload = function() {
     `;
 
     storyContainer.insertAdjacentHTML("beforeend", cardHTML);
+  
+    currentCardForm = document.getElementById(`${individualPostData.id}`);
+    currentCardForm.addEventListener("submit", createBookmark);    
   }
-
-  // Add event listeners to all Form Buttons now that it's built
-  setTimeout(function addSubmitListener() {
-    let cardForms = document.querySelectorAll(".card-form");
-    
-    cardForms.forEach( buttonClick => {
-      buttonClick.addEventListener("submit", createBookmark);
-    });
-  }, 2000);
 
   function createBookmark(event) {
     event.preventDefault();
+    
     let id = event.currentTarget[0].dataset.id;    
     
     let bookmark = {
@@ -125,8 +120,9 @@ window.onload = function() {
       localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
     } 
 
+
     const currentCard = document.getElementById(event.currentTarget[0].dataset.id);
-    currentCard.style.display = "none";
+    currentCard.parentElement.style.display = "none";
 
     // ********************************************** //
     let bookmarkContent;
