@@ -586,6 +586,7 @@ footer {
     line-height: 1;
     letter-spacing: normal;
     color: #039be5;
+    cursor: pointer;
   }
 
   .hamburger {
