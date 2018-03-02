@@ -1,4 +1,5 @@
-# SURE. Website Recreation & Hacker News Bookmarking App
+# SURE
+## Website Recreation & Hacker News Bookmarking App
 
 ## Synopsis
 
