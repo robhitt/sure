@@ -6,7 +6,13 @@
 
 body {
   margin: 0 auto;
+  
+}
+
+.page-top-container {
   background: url("../assets/images/blue-bg.svg") no-repeat;
+  background-size: cover;
+  
 }
 
 .mobile-menu {
@@ -150,7 +156,7 @@ main {
   letter-spacing: 1px;
   text-align: center;
   color: #fff;
-  margin-bottom: 24px;
+  margin: 0 auto 24px;
 }
 
 .cta-container {
@@ -362,7 +368,7 @@ main {
   background-color: #fff;
   padding: 35px 33px 35px 23px;
   font-size: 0;
-  margin-bottom: 51px;
+  margin: 0 auto 51px;
   -webkit-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.75);
@@ -498,6 +504,12 @@ footer {
   .footer-container {
     padding-left: 50px;
     padding-right: 50px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  body {
+    background-size: 100%;
   }
 }
 
