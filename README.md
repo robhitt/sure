@@ -1,4 +1,4 @@
-# SURE. Code Challenge
+# SURE. Website Recreation & Hacker News Bookmarking App
 
 ## Synopsis
 
@@ -8,7 +8,7 @@
 * Assets pulled from Zeplin file
 * Used Material Icons to mimick similar icons as SURE. website
 * Mobile & Cross browser compatible
-* Link to Hacker News bookmark page off of the CTA button
+* Link to custom Hacker News bookmark page off of the CTA button
 
 2. Creation of Hacker News bookmark page
 * Hit hacker news API twice
@@ -28,7 +28,8 @@
 
 ## Installation
 
-Fire up the index.html file in any web browser and you'll be good to go!
+1. Fire up the [index.html](https://robhitt.github.io/sure/) file in any web browser and you'll be good to go!
+2. Once on the landing page click the "Get Started" CTA button to navigate to the [bookmarking app](https://robhitt.github.io/sure/hacker-news/).
 
 Note:
 * Cross compatiable among all browsers including (Chrome, Firefox, Safari & Opera).
