@@ -3,12 +3,14 @@ window.onload = function() {
   
   // Request the current top story id's from hacker news
   let storyIdRequest = new XMLHttpRequest();
+
+  // Note: In fetch request URL is first!
   storyIdRequest.open("GET", topStories);
 
   storyIdRequest.onload = function () {
     if (storyIdRequest.status >= 200 && storyIdRequest.status < 400) {
       let postIdData = JSON.parse(storyIdRequest.responseText);
-      postIdData = postIdData.slice(0, 100);
+      postIdData = postIdData.slice(0, 100); // HN returns top 500 posts
       renderProductId(postIdData);
     } else {
       console.log("Connected to server but returned an error");
